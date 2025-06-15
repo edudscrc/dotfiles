@@ -1,0 +1,305 @@
+/* Author: Eduardo de Sá Coêlho Ribeiro Costa */
+/* Github: https://github.com/edudscrc */
+/* Waybar v0.12.0 */
+
+@define-color modules_background #1D2021;
+
+@define-color workspaces_button_off #d5c4a1;
+@define-color workspaces_button_on #ebdbb2;
+
+@define-color spotify_idle #98971a;
+@define-color spotify_hover #b8bb26;
+
+@define-color tray_menu #1D2021;
+@define-color tray_menu_border #d79921;
+@define-color tray_menu_item #ebdbb2;
+@define-color tray_menu_item_hover #ebdbb2;
+@define-color tray_menu_item_hover_background #a89984;
+
+@define-color clock_idle #ebdbb2;
+@define-color clock_hover #076678;
+
+@define-color weather_idle #ebdbb2;
+@define-color weather_hover #8f3f71;
+
+@define-color temperature_idle #ebdbb2;
+@define-color temperature_hover #9d0006;
+
+@define-color brightness_idle #ebdbb2;
+@define-color brightness_hover #9d0006;
+
+@define-color sound_idle #ebdbb2;
+@define-color sound_hover #9d0006;
+
+@define-color bluetooth_idle #ebdbb2;
+@define-color bluetooth_hover #12161f;
+
+@define-color network_idle #ebdbb2;
+@define-color network_hover #12161f;
+
+@define-color power_idle #ebdbb2;
+@define-color power_hover #12161f;
+
+@define-color tooltip_background #12161f;
+@define-color tooltip_text #a5c6d4;
+
+/*----------------*/
+/*-----GLOBAL-----*/
+/*----------------*/
+
+* {
+  font-family: "Monaspace Neon Frozen", "JetBrainsMono Nerd Font";
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#waybar {
+  background-color: @modules_background;
+}
+
+/*--------------------*/
+/*-----WORKSPACES-----*/
+/*--------------------*/
+
+#workspaces {
+  margin-left: 6px;
+  margin-right: 16px;
+}
+
+#workspaces button {
+  color: @workspaces_button_off;
+
+  margin: 0px;
+  padding: 0px;
+
+  transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+  color: @workspaces_button_on;
+
+  transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+  background: none;
+
+  color: @workspaces_button_on;
+
+  box-shadow: none;
+  text-shadow: none;
+  transition: none;
+  border-color: transparent;
+
+  transition: all 0.3s ease;
+}
+
+/*-----------------*/
+/*-----SPOTIFY-----*/
+/*-----------------*/
+
+#custom-spotify {
+  color: @spotify_idle;
+
+  margin-right: 16px;
+
+  transition: all 0.3s ease;
+}
+
+#custom-spotify:hover {
+  color: @spotify_hover;
+
+  transition: all 0.3s ease;
+}
+
+#tray menu {
+  background-color: @tray_menu;
+  border: 2px solid @tray_menu_border;
+}
+
+#tray menu menuitem {
+  color: @tray_menu_item;
+}
+
+#tray menu menuitem:hover {
+  color: @tray_menu_item_hover;
+  background-color: @tray_menu_item_hover_background;
+}
+
+/*---------------*/
+/*-----CLOCK-----*/
+/*---------------*/
+
+#clock {
+  color: @clock_idle;
+
+  margin-right: 16px;
+
+  transition: all 0.3s ease;
+}
+
+#clock:hover {
+  color: @clock_hover;
+
+  transition: all 0.3s ease;
+}
+
+/*-----------------*/
+/*-----WEATHER-----*/
+/*-----------------*/
+
+#custom-weather {
+  color: @weather_idle;
+
+  transition: all 0.3s ease;
+}
+
+#custom-weather:hover {
+  color: @weather_hover;
+
+  transition: all 0.3s ease;
+}
+
+/*----------------------------------*/
+/*-----WL-GAMMARELAY-TEMPERATURE-----*/
+/*----------------------------------*/
+
+#custom-wl-gammarelay-temperature {
+  color: @temperature_idle;
+
+  margin-right: 12px;
+
+  transition: all 0.3s ease;
+}
+
+#custom-wl-gammarelay-temperature:hover {
+  color: @temperature_hover;
+
+  transition: all 0.3s ease;
+}
+
+/*----------------------------------*/
+/*-----WL-GAMMARELAY-BRIGHTNESS-----*/
+/*----------------------------------*/
+
+#custom-wl-gammarelay-brightness {
+  color: @brightness_idle;
+
+  margin-right: 12px;
+
+  transition: all 0.3s ease;
+}
+
+#custom-wl-gammarelay-brightness:hover {
+  color: @brightness_hover;
+
+  transition: all 0.3s ease;
+}
+
+/*---------------------*/
+/*-----WIREPLUMBER-----*/
+/*---------------------*/
+
+#custom-wireplumber {
+  color: @sound_idle;
+
+  margin-right: 16px;
+
+  transition: all 0.3s ease;
+}
+
+#custom-wireplumber:hover {
+  color: @sound_hover;
+
+  transition: all 0.3s ease;
+}
+
+/*-------------------*/
+/*-----GROUP END-----*/
+/*-------------------*/
+
+#group-end {
+  margin-right: 16px;
+}
+
+/*-------------------*/
+/*-----BLUETOOTH-----*/
+/*-------------------*/
+
+#bluetooth {
+  color: @bluetooth_idle;
+
+  margin-right: 12px;
+
+  transition: all 0.3s ease;
+}
+
+#bluetooth.off {
+  transition: all 0.3s ease;
+}
+
+#bluetooth:hover {
+  color: @bluetooth_hover;
+
+  transition: all 0.3s ease;
+}
+
+/*-----------------*/
+/*-----NETWORK-----*/
+/*-----------------*/
+
+#network {
+  color: @network_idle;
+
+  transition: all 0.3s ease;
+}
+
+#network:hover {
+  color: @network_hover;
+
+  transition: all 0.3s ease;
+}
+
+/*---------------*/
+/*-----POWER-----*/
+/*---------------*/
+
+#custom-power,
+#custom-lock,
+#custom-reboot {
+  color: @power_idle;
+
+  transition: all 0.3s ease;
+}
+
+#custom-power {
+  padding-right: 12px;
+}
+
+#custom-reboot {
+  padding-right: 12px;
+}
+
+#custom-lock {
+  padding-right: 12px;
+}
+
+#custom-power:hover,
+#custom-lock:hover,
+#custom-reboot:hover {
+  color: @power_hover;
+
+  transition: all 0.3s ease;
+}
+
+/*-----------------*/
+/*-----TOOLTIP-----*/
+/*-----------------*/
+
+tooltip {
+  background-color: @tooltip_background;
+}
+
+tooltip label {
+  color: @tooltip_text;
+}

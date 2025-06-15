@@ -1,0 +1,172 @@
+// Author: Eduardo de Sá Coêlho Ribeiro Costa
+// Github: https://github.com/edudscrc
+// Waybar v0.12.0
+{
+  "spacing": 0,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "group/group-left"
+  ],
+  "modules-center": [
+    "group/group-center"
+  ],
+  "modules-right": [
+    "group/group-right"
+  ],
+  "group/group-left": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/workspaces",
+      "custom/spotify",
+      "tray"
+    ]
+  },
+  "group/group-center": {
+    "orientation": "horizontal",
+    "modules": [
+      "clock",
+      "custom/weather",
+      "custom/wl-gammarelay-brightness-aux",
+      "custom/wl-gammarelay-temperature-aux"
+    ]
+  },
+  "group/group-right": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/wl-gammarelay-temperature",
+      "custom/wl-gammarelay-brightness",
+      "custom/wireplumber",
+      "group/group-end",
+      "group/group-power"
+    ]
+  },
+  "custom/spotify": {
+    "format": "{}",
+    "exec": "/usr/bin/python3 ~/.config/waybar/assets/mediaplayer.py --player spotify",
+    "return-type": "json",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-scroll-up": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotify previous"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 6
+  },
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "format": {
+        "months": "<span color='#6b90ad'><b>{}</b></span>",
+        "days": "<span color='#4e6a89'><b>{}</b></span>",
+        "weekdays": "<span color='#a5c6d4'><b>{}</b></span>",
+        "today": "<span color='#b1535e'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click": "shift_reset",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "custom/weather": {
+    "format": {},
+    "exec": "~/.config/waybar/assets/venv/bin/python3 ~/.config/waybar/assets/weather.py",
+    "restart-interval": 300,
+    "return-type": "json",
+    "on-click": "xdg-open https://weather.com/en-IN/weather/today/l/294e1ac420e35622f2a093ac2951485fa4c28cd2fe5b8a01da513a1b2bb809ca"
+  },
+  "custom/wireplumber": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/assets/volume_bar.sh",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ --limit 1.0",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    "tooltip": true
+  },
+  "custom/wl-gammarelay-temperature": {
+    "format": "{}",
+    "return-type": "json",
+    "tooltip": true,
+    "exec": "~/.config/waybar/assets/temperature_bar.sh",
+    "interval": 2,
+    "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +500",
+    "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -500"
+  },
+  "custom/wl-gammarelay-temperature-aux": {
+    "format": "",
+    "tooltip": false,
+    "exec": "wl-gammarelay-rs watch {t}"
+  },
+  "custom/wl-gammarelay-brightness": {
+    "format": "{}",
+    "return-type": "json",
+    "tooltip": true,
+    "exec": "~/.config/waybar/assets/brightness_bar.sh",
+    "interval": 2,
+    "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.05",
+    "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.05"
+  },
+  "custom/wl-gammarelay-brightness-aux": {
+    "format": "",
+    "tooltip": false,
+    "exec": "wl-gammarelay-rs watch {bp}"
+  },
+  "group/group-end": {
+    "orientation": "horizontal",
+    "modules": [
+      "bluetooth",
+      "network"
+    ]
+  },
+  "bluetooth": {
+    "format-no-controller": "",
+    "format-disabled": "",
+    "format-off": "<s>Bluetooth</s>",
+    "format-on": "Bluetooth",
+    "format-connected": "{device_alias}",
+    "on-click-right": "kitty -e bluetoothctl",
+    "on-click": "bluetoothctl show | grep -q \"Powered: yes\" && bluetoothctl power off || bluetoothctl power on",
+    "tooltip-format-connected": "{device_alias}\t{device_address}"
+  },
+  "network": {
+    "interval": 60,
+    "format-wifi": " {essid}",
+    "format-ethernet": " {ifname}",
+    "format-disconnected": " disconnected",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-wifi": "{essid}"
+  },
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power", // First element is the "group leader" and won't ever be hidden
+      "custom/lock",
+      "custom/reboot"
+    ]
+  },
+  "custom/lock": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "hyprlock"
+  },
+  "custom/reboot": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "systemctl reboot"
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "systemctl poweroff"
+  }
+}

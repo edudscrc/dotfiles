@@ -1,0 +1,155 @@
+# See dunst(5) for all configuration options
+
+[global]
+    monitor = 1
+
+    follow = mouse
+    width = (0, 300)
+    height = (0, 300)
+
+    origin = top-right
+
+    # Offset from the origin (horizontal, vertical)
+    offset = (10, 10)
+
+    scale = 0
+
+    # Maximum number of notification (0 means no limit)
+    notification_limit = 20
+
+    ### Progress bar ###
+    progress_bar = true
+    progress_bar_height = 10
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+
+    # Corner radius for the icon image.
+    icon_corner_radius = 2
+    icon_corners = all
+
+    # Show how many messages are currently hidden (because of
+    # notification_limit).
+    indicate_hidden = yes
+
+    transparency = 0
+
+    separator_height = 2
+    padding = 6
+    horizontal_padding = 6
+    text_icon_padding = 6
+
+    frame_width = 2
+    frame_color = "#6b90ad"
+
+    gap_size = 0
+    separator_color = frame
+
+    sort = update
+
+    ### Text ###
+    font = Monaspace Neon Frozen 9
+
+    line_height = 0
+    markup = full
+
+    # The format of the message.  Possible variables are:
+    #   %a  appname
+    #   %s  summary
+    #   %b  body
+    #   %i  iconname (including its path)
+    #   %I  iconname (without its path)
+    #   %p  progress value if set ([  0%] to [100%]) or nothing
+    #   %n  progress value if set without any extra characters
+    #   %%  Literal %
+    # Markup is allowed
+    format = "<b>%s</b>\n%b"
+
+    alignment = left
+    vertical_alignment = center
+
+    # Show age of message if message is older than show_age_threshold
+    # seconds.
+    # Set to -1 to disable.
+    show_age_threshold = 60
+
+    # Specify where to make an ellipsis in long lines.
+    # Possible values are "start", "middle" and "end".
+    ellipsize = middle
+
+    # Ignore newlines '\n' in notifications.
+    ignore_newline = no
+
+    # Stack together notifications with the same content
+    stack_duplicates = true
+
+    # Hide the count of stacked notifications with the same content
+    hide_duplicate_count = false
+
+    # Display indicators for URLs (U) and actions (A).
+    show_indicators = yes
+
+    ### Icons ###
+    enable_recursive_icon_lookup = true
+    icon_theme = Adwaita
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 64
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+    ### History ###
+
+    # Should a notification popped up from history be sticky or timeout
+    # as if it would normally do.
+    sticky_history = yes
+
+    # Maximum amount of notifications kept in history
+    history_length = 20
+
+    ### Misc/Advanced ###
+    dmenu = /usr/bin/dmenu -p dunst:
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+
+    corner_radius = 2
+    corners = all
+
+    ignore_dbusclose = false
+
+    force_xwayland = false
+
+    ### Legacy
+    force_xinerama = false
+
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+
+
+[urgency_low]
+    background = "#12161f"
+    foreground = "#6b90ad"
+    timeout = 10
+    default_icon = dialog-information
+
+[urgency_normal]
+    background = "#12161f"
+    foreground = "#6b90ad"
+    timeout = 10
+    override_pause_level = 30
+    default_icon = dialog-information
+
+[urgency_critical]
+    background = "#12161f"
+    foreground = "#d29d72"
+    frame_color = "#b1535e"
+    timeout = 0
+    override_pause_level = 60
+    default_icon = dialog-warning
