@@ -42,7 +42,7 @@
     text_icon_padding = 6
 
     frame_width = 2
-    frame_color = "#6b90ad"
+    frame_color = "#a89984"
 
     gap_size = 0
     separator_color = frame
@@ -134,22 +134,22 @@
 
 
 [urgency_low]
-    background = "#12161f"
-    foreground = "#6b90ad"
+    background = "#282828"
+    foreground = "#b8bb26"
     timeout = 10
     default_icon = dialog-information
 
 [urgency_normal]
-    background = "#12161f"
-    foreground = "#6b90ad"
+    background = "#282828"
+    foreground = "#b8bb26"
     timeout = 10
     override_pause_level = 30
     default_icon = dialog-information
 
 [urgency_critical]
-    background = "#12161f"
-    foreground = "#d29d72"
-    frame_color = "#b1535e"
+    background = "#fb4934"
+    foreground = "#ebdbb2"
+    frame_color = "#d65d0e"
     timeout = 0
     override_pause_level = 60
     default_icon = dialog-warning
