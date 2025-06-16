@@ -2,46 +2,46 @@
 /* Github: https://github.com/edudscrc */
 /* Waybar v0.12.0 */
 
-@define-color modules_background #1D2021;
+@define-color modules_background #282828;
 
-@define-color workspaces_button_off #d5c4a1;
-@define-color workspaces_button_on #ebdbb2;
+@define-color workspaces_button_off #928374;
+@define-color workspaces_button_on #fbf1c7;
 
-@define-color spotify_idle #98971a;
-@define-color spotify_hover #b8bb26;
+@define-color spotify_idle #b8bb26;
+@define-color spotify_hover #98971a;
 
 @define-color tray_menu #1D2021;
-@define-color tray_menu_border #d79921;
+@define-color tray_menu_border #3c3836;
 @define-color tray_menu_item #ebdbb2;
 @define-color tray_menu_item_hover #ebdbb2;
-@define-color tray_menu_item_hover_background #a89984;
+@define-color tray_menu_item_hover_background #504945;
 
 @define-color clock_idle #ebdbb2;
-@define-color clock_hover #076678;
+@define-color clock_hover #a89984;
 
-@define-color weather_idle #ebdbb2;
-@define-color weather_hover #8f3f71;
+@define-color weather_idle #83a598;
+@define-color weather_hover #458588;
 
-@define-color temperature_idle #ebdbb2;
-@define-color temperature_hover #9d0006;
+@define-color temperature_idle #fe8019;
+@define-color temperature_hover #d65d0e;
 
-@define-color brightness_idle #ebdbb2;
-@define-color brightness_hover #9d0006;
+@define-color brightness_idle #fe8019;
+@define-color brightness_hover #d65d0e;
 
-@define-color sound_idle #ebdbb2;
-@define-color sound_hover #9d0006;
+@define-color sound_idle #fabd2f;
+@define-color sound_hover #d79921;
 
-@define-color bluetooth_idle #ebdbb2;
-@define-color bluetooth_hover #12161f;
+@define-color bluetooth_idle #458488;
+@define-color bluetooth_hover #83a598;
 
-@define-color network_idle #ebdbb2;
-@define-color network_hover #12161f;
+@define-color network_idle #458488;
+@define-color network_hover #83a598;
 
-@define-color power_idle #ebdbb2;
-@define-color power_hover #12161f;
+@define-color power_idle #fb4934;
+@define-color power_hover #cc241d;
 
-@define-color tooltip_background #12161f;
-@define-color tooltip_text #a5c6d4;
+@define-color tooltip_background #1d2021;
+@define-color tooltip_text #ebdbb2;
 
 /*----------------*/
 /*-----GLOBAL-----*/
