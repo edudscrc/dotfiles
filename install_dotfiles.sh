@@ -23,6 +23,8 @@ for folder in "${!DOTFILES[@]}"; do
     TARGET="${DOTFILES[$folder]}"
     SOURCE="$DOTFILES_DIR/$folder"
 
+    rm -rf "$TARGET"
+
     ln -sfn "$SOURCE" "$TARGET"
     echo "Linked $SOURCE -> $TARGET"
 done
