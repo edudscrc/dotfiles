@@ -10,6 +10,7 @@ DOTFILES=(
     ["rofi"]="$CONFIG_DIR/rofi"
     ["kitty"]="$CONFIG_DIR/kitty"
     ["dunst"]="$CONFIG_DIR/dunst"
+    ["zathura"]="$CONFIG_DIR/zathura"
 )
 
 declare -A HOME_FILES
