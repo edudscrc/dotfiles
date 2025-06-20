@@ -7,6 +7,7 @@
 
 alias ls='eza -lsnew'
 alias lsa='eza -lasnew'
+alias vim='nvim'
 
 # Define color escape sequences
 RESET="\[\e[0m\]"    # Reset color
