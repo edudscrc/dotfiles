@@ -9,6 +9,8 @@ alias ls='eza -lsnew'
 alias lsa='eza -lasnew'
 alias vim='nvim'
 
+alias minecraft='java -jar ~/games/SKlauncher-3.2.12.jar'
+
 # Define color escape sequences
 RESET="\[\e[0m\]"    # Reset color
 BOLD="\[\e[1m\]"     # Bold text

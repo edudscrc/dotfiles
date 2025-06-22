@@ -34,7 +34,7 @@ for file in "${!HOME_FILES[@]}"; do
     SOURCE="$DOTFILES_DIR/$file"
 
     rm "$HOME/$file"
-    cp "$SOURCE" "$HOME"
+    ln -sf "$SOURCE" "$HOME"
     echo "Copied $SOURCE -> $HOME"
 done
 
