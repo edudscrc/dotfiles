@@ -69,10 +69,13 @@ class PlayerManager:
 
         if len(text) > 40:
             text = text[:40]
+
+        text = text.replace("&", "&amp;")
+
         output = {"text": text,
                   "class": "custom-" + player.props.player_name,
                   "alt": player.props.player_name}
-
+        
         sys.stdout.write(json.dumps(output) + "\n")
         sys.stdout.flush()
 
